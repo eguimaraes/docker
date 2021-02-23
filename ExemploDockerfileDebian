@@ -1,0 +1,10 @@
+FROM debian:latest
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN add-apt-repository -y universe
+RUN apt install -y python2 
+RUN apt-get install -y python3
+RUN apt-get install -y python-pip
+RUN apt-get install -y python3-pip
+RUN pip2 install astropy
+RUN pip2 install scipy
