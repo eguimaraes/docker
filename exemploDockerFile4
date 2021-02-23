@@ -1,7 +1,7 @@
 FROM debian:latest
 RUN apt-get -y update    
 RUN apt-get -y upgrade    
-RUN apt-get install git-all
+RUN apt-get install -y git-all
 RUN apt install -y python2
 RUN apt-get install -y python3
 RUN apt-get install -y python-pip
