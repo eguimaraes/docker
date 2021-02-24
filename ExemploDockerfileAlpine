@@ -1,0 +1,31 @@
+FROM alpine:latest
+RUN apk update    
+RUN apk upgrade    
+RUN apk add git
+RUN apk update
+RUN apk add py3-setuptools
+RUN apk add py-pip
+RUN apk add py3-pip
+RUN pip install astropy
+RUN pip install scipy
+RUN pip3 install astropy
+RUN pip3 install scipy
+RUN pip3 install matplotlib
+RUN git clone https://github.com/cosmo-ethz/hide.git
+RUN git clone https://github.com/cosmo-ethz/seek.git
+WORKDIR /hide
+RUN pip2 install -r requirements.txt
+RUN python2 setup.py install
+WORKDIR /seek
+RUN pip2 install -r requirements.txt
+RUN python2 setup.py install
+WORKDIR /
+RUN mkdir bingo
+WORKDIR /bingo
+COPY seek-0.1.0-py2.7.egg.tar.gz /bingo
+COPY hide-0.1.0-py2.7.egg.tar.gz /bingo
+RUN tar -xvf seek-0.1.0-py2.7.egg.tar.gz
+RUN tar -xvf hide-0.1.0-py2.7.egg.tar.gz
+RUN mv seek-0.1.0-py2.7.egg /usr/local/lib/python2.7/dist-packages/seek-0.1.0-py2.7.egg
+RUN mv hide-0.1.0-py2.7.egg /usr/local/lib/python2.7/dist-packages/seek-0.1.0-py2.7.egg
+WORKDIR /
