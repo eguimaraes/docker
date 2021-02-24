@@ -26,6 +26,7 @@ WORKDIR /bingo
 COPY seek-0.1.0-py2.7.egg.tar.gz /bingo
 COPY hide-0.1.0-py2.7.egg.tar.gz /bingo
 RUN tar -xvf seek-0.1.0-py2.7.egg.tar.gz
-TAR -xvf hide-0.1.0-py2.7.egg.tar.gz
+RUN tar -xvf hide-0.1.0-py2.7.egg.tar.gz
 RUN mv seek-0.1.0-py2.7.egg /usr/local/lib/python2.7/dist-packages/seek-0.1.0-py2.7.egg
 RUN mv hide-0.1.0-py2.7.egg /usr/local/lib/python2.7/dist-packages/seek-0.1.0-py2.7.egg
+WORKDIR /
