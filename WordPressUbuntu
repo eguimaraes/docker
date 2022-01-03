@@ -17,3 +17,6 @@ RUN apt install -y php-mbstring
 RUN apt install -y php-mysql
 RUN apt install -y php-xml
 RUN apt install -y php-zip
+RUN mkdir -p /srv/www
+RUN chown www-data: /srv/www
+RUN curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
