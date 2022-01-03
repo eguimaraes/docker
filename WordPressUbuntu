@@ -1,0 +1,25 @@
+FROM ubuntu:latest
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get -y install software-properties-common
+RUN add-apt-repository -y universe
+RUN apt update -y  
+RUN apt install -y python2 
+RUN apt-get install-y python3
+RUN apt-get install-y python-pip
+RUN curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+RUN python2 get-pip.py
+RUN sudo apt update
+RUN sudo apt install apache2 
+RUN ghostscript 
+RUN mysql-server 
+RUN php 
+RUN php-bcmath 
+RUN php-curl 
+RUN php-imagick
+RUN php-intl
+RUN php-json
+RUN php-mbstring
+RUN php-mysql
+RUN php-xml
+RUN php-zip
