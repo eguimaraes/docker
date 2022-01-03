@@ -1,22 +1,26 @@
 FROM ubuntu:latest
 RUN apt-get -y update
 RUN apt-get -y upgrade
+RUN apt-get update && apt-get install -y curl
 RUN apt-get -y install software-properties-common
 RUN add-apt-repository -y universe
-RUN apt update -y  
-RUN apt update -y
-RUN apt install -y apache2 
-RUN apt install -y mysql-server 
-RUN apt install -y php 
-RUN apt install -y php-bcmath 
-RUN apt install -y php-curl 
-RUN apt install -y php-imagick
-RUN apt install -y php-intl
-RUN apt install -y php-json
-RUN apt install -y php-mbstring
-RUN apt install -y php-mysql
-RUN apt install -y php-xml
-RUN apt install -y php-zip
+RUN apt install -y python2 
+RUN apt-get install -y python3
+RUN add-apt-repository -y universe
+RUN apt-get install -y apache2 
+RUN apt-get install -y mysql-server 
+RUN apt-get install -y php 
+RUN apt-get install -y php-bcmath 
+RUN apt-get install -y php-curl 
+RUN apt-get install -y php-imagick
+RUN apt-get install -y php-intl
+RUN apt-get install -y php-json
+RUN apt-get install -y php-mbstring
+RUN apt-get install -y php-mysql
+RUN apt-get install -y php-xml
+RUN apt-get install -y php-zip
+RUN apt-get -y update
+RUN apt-get -y upgrade
 RUN mkdir -p /srv/www
 RUN chown www-data: /srv/www
 RUN curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
