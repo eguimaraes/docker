@@ -1,5 +1,6 @@
 #ver https://ubuntu.com/tutorials/install-and-configure-wordpress#4-configure-apache-for-wordpress
 nano /etc/apache2/sites-available/wordpress.conf
+sudo service mysql start
 service apache2 start
 a2ensite wordpress
 a2enmod rewrite
