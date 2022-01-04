@@ -26,3 +26,6 @@ RUN apt-get -y upgrade
 RUN mkdir -p /srv/www
 RUN curl -o  /srv/www/latest.tar.gz https://wordpress.org/latest.tar.gz 
 RUN tar xvf /srv/www/latest.tar.gz -C /srv/www/
+RUN service mysql start
+RUN service apache2 start
+
