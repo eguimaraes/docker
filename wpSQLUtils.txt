@@ -1,0 +1,2 @@
+SELECT * FROM wordpressmysqldb9505.wp_options;
+update wordpressmysqldb.wp_options set option_value="https://url" where option_value="http://localhost:88"
