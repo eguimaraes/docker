@@ -1,0 +1,1 @@
+ mysqldump wordpress > 20220115_WordPressStaPaula.sql
